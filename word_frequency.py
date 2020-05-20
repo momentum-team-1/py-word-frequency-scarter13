@@ -11,7 +11,7 @@ def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
     opened_file = open(file)
     text = opened_file.read()
-    print(text)
+    #print(text)
         #replace hyphens
     no_hyphen = text.replace("-"," ")
         #remove punctuation
@@ -21,12 +21,17 @@ def print_word_freq(file):
             no_punctuation = no_punctuation + char
         #make everything lowercase
     lower_case_text = no_punctuation.lower()
-    print(lower_case_text)
+    #print(lower_case_text)
         #split into words
-    words_with_line_breaks = lower_case_text.split()
-        #remove line breaks
-
-    print(words_with_line_breaks)
+    all_words = lower_case_text.split()
+    #print(all_words)
+        #remove stop words
+    no_stop_words = []
+    for each_word in all_words:
+        if each_word not in STOP_WORDS:
+            no_stop_words.append(each_word)
+    print(no_stop_words)
+    
 
     
 
