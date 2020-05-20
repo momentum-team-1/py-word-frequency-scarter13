@@ -23,8 +23,10 @@ def print_word_freq(file):
     lower_case_text = no_punctuation.lower()
     print(lower_case_text)
         #split into words
-    words = lower_case_text.split(" ")
-    print(words)
+    words_with_line_breaks = lower_case_text.split()
+        #remove line breaks
+
+    print(words_with_line_breaks)
 
     
 
@@ -32,7 +34,7 @@ def print_word_freq(file):
 
     #remove the stop words
     #count the frequency of the remaing words (see ex 6 for sort function)
-    #output as a cord list, count and graph of ***
+    #output as a cord list, count and graph of *** (ex 7 for justify)
 
 
 if __name__ == "__main__":
