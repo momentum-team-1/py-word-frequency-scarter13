@@ -35,8 +35,9 @@ def print_word_freq(file):
     word_length = 0
     for word in no_stop_words:
         if len(word) > word_length:
-            print (word, len(word))
+            #print (word, len(word))
             word_length = len(word)
+    #print (word_length)
         #count remaining word usage
     word_counts = {}
     for word in no_stop_words:
@@ -45,7 +46,20 @@ def print_word_freq(file):
         else: word_counts[word] = 1
     #print (word_counts)
         #sort words by frequency
-    print (sorted(word_counts.items(), key=lambda seq: seq[1], reverse=True))
+    ordered_by_freq = (sorted(word_counts.items(), key=lambda seq: seq[1], reverse=True))
+    #print (ordered_by_freq)
+        #print words, freq, graph, indent, and add a space past the pipe for values less than 10
+    for key, value in ordered_by_freq:
+        indent = (word_length + 1 - len(key))
+        space = " "
+        star = "*"
+        if value >= 10:
+            print (indent * space, key, " | ", value, value * star)
+        else:
+            print (indent * space, key, " |  ", value, value * star)
+    
+
+   
     
 
     
