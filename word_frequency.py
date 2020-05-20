@@ -31,13 +31,22 @@ def print_word_freq(file):
         if each_word not in STOP_WORDS:
             no_stop_words.append(each_word)
     #print(no_stop_words)
+        #find the longest word to use for indention purposes
+    word_length = 0
+    for word in no_stop_words:
+        if len(word) > word_length:
+            print (word, len(word))
+            word_length = len(word)
         #count remaining word usage
     word_counts = {}
     for word in no_stop_words:
         if word in word_counts:
             word_counts[word] +=1
         else: word_counts[word] = 1
-    print (word_counts)
+    #print (word_counts)
+        #sort words by frequency
+    print (sorted(word_counts.items(), key=lambda seq: seq[1], reverse=True))
+    
 
     
 
