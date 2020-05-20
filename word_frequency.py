@@ -30,7 +30,15 @@ def print_word_freq(file):
     for each_word in all_words:
         if each_word not in STOP_WORDS:
             no_stop_words.append(each_word)
-    print(no_stop_words)
+    #print(no_stop_words)
+        #count remaining word usage
+    word_counts = {}
+    for word in no_stop_words:
+        if word in word_counts:
+            word_counts[word] +=1
+        else: word_counts[word] = 1
+    print (word_counts)
+
     
 
     
